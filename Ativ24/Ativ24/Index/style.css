@@ -1,0 +1,126 @@
+body{
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    margin: 0;
+}
+
+.contform{
+text-align: center;
+padding-top: 170px;
+
+}
+
+#navbar{
+    background-color: black;
+    margin: 0;
+}
+
+#navbar > ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+#navbar a{
+color: white;
+list-style: none;
+text-decoration: none;
+font-size: 40px;
+
+}
+
+li{
+list-style: none;
+}
+input{
+    margin: 2px ;
+    font-size: 25px;
+    border: 3px solid black;
+    box-shadow: 20px 0px 80px 20px  black;
+    background-color: rgb(138, 132, 132);
+    border-radius: 8px;
+    
+}
+
+label{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    padding-left: 690px;
+    padding-top: 20px;
+    display: flex;
+
+
+}
+
+#confirm{
+    margin-top: 25px;
+    border: none;
+    box-shadow: 20px 0px 80px 20px  black;
+    background-color: rgb(22, 22, 22);
+    border-radius: 10px;
+    color: white ;
+    font-weight: 800;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+#confirm:hover{
+    transform: scale(1.2);
+    color: rgb(49, 235, 49);
+}
+table {
+
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 5%;
+    
+}
+th{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    color: white;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 300px;
+}
+th {
+    background-color: #00000080;
+    
+}
+
+td{
+padding-left: 180px;
+background-color: #0e0d0d30;
+font-size: 20px;
+}
+
+#background{
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+}
+
+#background > video{
+width: 100%;
+height: 100%;
+position: fixed;
+z-index: -1;
+object-fit: cover;
+inset: 0;
+}
+
+#background > video::after{
+    content: '';
+    width: inherit;
+    height: inherit;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+    inset: 0;
+    position: fixed;
+z-index: -1;
+}

@@ -1,0 +1,106 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gestaoAtividades..css">
+</head>
+<body>
+    <div id="background">
+        <video muted autoplay loop>
+            <source src="/Ativ24/video/856967-hd_1920_1080_25fp" type="video/mp4">
+        </video>
+    </div>
+    
+    <div id="navbar">
+        <ul>
+            <li>
+                <a href="/Ativ24/Index/principal.html">Inicio</a>
+            </li>
+            <li>
+                <a href="/Ativ24/Index/gestaoAtividades.html">Gestão de Usuários</a>
+            </li>
+            <li>
+                <a href="/Ativ24/Index/index.html">Fazer login</a>
+            </li>
+        </ul>
+
+        
+    <div class="contform">
+        <form id="contform">
+            <li>
+                <label>Id:</label>
+                <br>
+                <input type="text" name="id" id="id"  required>
+            </li>
+            <li>
+                <label>Descrição:</label>
+                <br>
+                <input type="text" name="descrição" id="descrição"  required>
+            </li>
+            <li>
+                <label>Data de Entrega:</label>
+                <br>
+                <input type="text" name="Data de Entrega" id="dataentrega"  required>
+            </li>
+            <button id="confirm">CADASTRAR</button>
+        </form>
+    </div>
+    <div>
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Descrição</th>
+                    <th>Data de Entrega</th>
+                </tr>
+            </thead>
+    </div>
+
+<script>  document.addEventListener("DOMContentLoaded", function() {
+    // capturar referencia do conteudo da tabela 
+    var tableBody = document.querySelector("#dataTable tbody");
+
+
+    for (var i = 0; i < sessionStorage.length; i++) {
+        
+        if (sessionStorage.key(i) == "produtos"){
+
+            var key = sessionStorage.key(i);
+            var value = JSON.parse(sessionStorage.getItem(key));
+
+            for(var j = 0; j <= value.length; j++){
+                
+                var objeto = value[j];
+
+                console.log(objeto);
+
+                 // Criar um linha
+                 var newRow = document.createElement("tr");
+                 // criar tres celulas
+                 var id = document.createElement("td");
+                 var descrição = document.createElement("td");
+                 var dataentrega= document.createElement("td");
+        
+                 id.textContent = objeto.id;
+                 descrição.textContent = objeto.descrição;
+                 dataentrega.textContent = objeto.dataentrega;
+              
+         
+                 // Add dados na linha
+                 newRow.appendChild(id);
+                 newRow.appendChild(descrição);
+                 newRow.appendChild(dataentrega);
+                 
+                 // ADD linha na tabela
+                 tableBody.appendChild(newRow);
+
+            } 
+        }
+    }
+});
+</script>
+    <script src="/Ativ24/Index/gestaoatividades.js"></script>
+</body>
+</html>

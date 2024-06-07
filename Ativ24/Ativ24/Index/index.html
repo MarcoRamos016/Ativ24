@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="background">
+        <video muted autoplay loop>
+            <source src="/Ativ24/video/856967-hd_1920_1080_25fps.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="navbar">
+        <ul class="navcontainer">
+            <li>
+                <a href="/Ativ24/Index/principal.html">Inicio</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="contform">
+        <form id="contform">
+            <li>
+                <label>Usuário</label>
+                <br>
+                <input type="number" name="Usuário" id="usuario" required>
+            </li>
+            <li>
+                <label>Senha</label>
+                <br>
+                <input type="text" name="senha" id="senha"  required>
+            </li>
+            <button id="confirm">CADASTRAR</button>
+        </form>
+    </div>
+    <div>
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>usuario</th>
+                    <th>senha</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        
+    </div>
+
+</body>
+
+        
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // capturar referencia do conteudo da tabela 
+      var tableBody = document.querySelector("#dataTable tbody");
+  
+  
+      for (var i = 0; i < sessionStorage.length; i++) {
+          
+          if (sessionStorage.key(i) == "produtos"){
+  
+              var key = sessionStorage.key(i);
+              var value = JSON.parse(sessionStorage.getItem(key));
+  
+              for(var j = 0; j <= value.length; j++){
+                  
+                  var objeto = value[j];
+  
+                  console.log(objeto);
+  
+                   // Criar um linha
+                   var newRow = document.createElement("tr");
+                   // criar tres celulas
+                   var senha = document.createElement("td");
+                   var usuario = document.createElement("td");
+        
+                  
+                   usuario.textContent = objeto.usuario;
+                   senha.textContent = objeto.senha;
+                
+           
+                   // Add dados na linha
+                   newRow.appendChild(senha);
+                   newRow.appendChild(usuario);
+        
+           
+                   // ADD linha na tabela
+                   tableBody.appendChild(newRow);
+  
+              } 
+          }
+      }
+  });
+  
+      
+  </script>
+
+  <script src="script.js"></script>
+</html>
